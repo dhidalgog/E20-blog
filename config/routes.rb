@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+	
+	get 'dashboard', to: "pages#index"
+	patch 'dashboard/:user_id', to: "pages#change_role", as: :role
 
 	resources :posts do
 		resources :comments, only: [:create, :destroy]
